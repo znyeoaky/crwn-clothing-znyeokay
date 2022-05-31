@@ -7,10 +7,10 @@ import {
 } from './directory-item.styles';
 
 const DirectoryItem = ({ category }) => {
-
   const { imageUrl, title, route } = category;
-  const Navigate = useNavigate();
-  const onNavigateHandler = () => Navigate(route);
+  const navigate = useNavigate();
+
+  const onNavigateHandler = () => navigate(route);
 
   return (
     <DirectoryItemContainer onClick={onNavigateHandler}>
