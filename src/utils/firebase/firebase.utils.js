@@ -20,15 +20,16 @@ import {
   getDocs,
 } from 'firebase/firestore';
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
-  authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
-  projectId: 'crwn-clothing-db-98d4d',
-  storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
-  messagingSenderId: '626766232035',
-  appId: '1:626766232035:web:506621582dab103a4d08d6',
+  apiKey: "AIzaSyCbGoYmA1e-UcIu_V6IZFNb7oe-Ro3MhF0",
+  authDomain: "crwn-clothing-db-a29ac.firebaseapp.com",
+  projectId: "crwn-clothing-db-a29ac",
+  storageBucket: "crwn-clothing-db-a29ac.appspot.com",
+  messagingSenderId: "327020484223",
+  appId: "1:327020484223:web:bf1a371a1c941dbe54114a"
 };
-
+// Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
@@ -67,7 +68,7 @@ export const getCategoriesAndDocuments = async () => {
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map((doc) => doc.data());
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
 };
 
 export const createUserDocumentFromAuth = async (
